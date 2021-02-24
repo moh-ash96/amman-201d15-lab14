@@ -36,26 +36,33 @@ function showCart() {
     let tableRaw = document.createElement('tr');
     tBody.appendChild(tableRaw);
     
-    
-    // TODO: Create a TD for the delete link, quantity,  and the item
     let tableDataRemove = document.createElement('td');
     tableRaw.appendChild(tableDataRemove);
     
+    let tableDataQuantity = document.createElement('td');
+    tableRaw.appendChild(tableDataQuantity);
+    tableDataQuantity.textContent=cart.items[i].quantity;
+
+
+
+    let tableDataItem = document.createElement('td');
+    tableRaw.appendChild(tableDataItem);
+    tableDataItem.textContent=cart.items[i].product;
+    // TODO: Create a TD for the delete link, quantity,  and the item
+    
     let img = document.createElement('img');
     tableDataRemove.appendChild(img);
-    img.src="assets/cross.png"
+    img.src="assets/cross.png";
     let src= document.getElementById('cart-container');
     src.appendChild(img);
-    console.log(img);
+    tableDataRemove.appendChild(img);
+    img.addEventListener('click',removeItemFromCart);
+    //console.log(img);
     // tableDataRemove.textContent('123')
     // console.log(tableDataRemove);
 
 
-    let tableDataQuantity = document.createElement('td');
-    tableRaw.appendChild(tableDataQuantity);
 
-    let tableDataItem = document.createElement('td');
-    tableRaw.appendChild(tableDataItem);
 
     // console.log(tBody);
     console.log(cart.items[i]);
@@ -63,13 +70,20 @@ function showCart() {
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 }
 function removeItemFromCart(event) {
+  
+  event.preventDefault();
+  
+   cart.removeItem();
 
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-  Cart.removeItem();
   // TODO: Save the cart back to local storage
-  Cart.saveToLocalStorage();
+
+
+  console.log(event);
+  cart.saveToLocalStorage();
   // TODO: Re-draw the cart table
-  showCart();
+  renderCart();
+
 
 
 }
