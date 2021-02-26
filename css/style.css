@@ -1,19 +1,127 @@
-* {
-    margin-left: 10px;
+
+
+
+body {
+  font-family: 'Patrick Hand', cursive;
+  
+}
+
+ header {
+  background: rgb(107, 71, 71);
+  overflow: hidden;
+  padding: 5px;
+}
+
+header:after {
+  position: fixed;
+  
+}
+
+body > header nav {
+  float: right;
+  line-height: 30px;
+ 
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  color: rgb(214, 245, 245);
+  padding: 10px;
+  text-decoration: none;
+}
+
+main {
+  
+  border: 1px solid ;
+  line-height: 50px;
+  margin: 30px;
+ 
+}
+#itemCount {
+  color: rgb(134, 129, 129);
+  font-size: 15px;
+}
+
+header h1 {
+  float: left;
+  font-size: 30px;
+  color: rgb(190, 146, 146);
+  opacity: 1;
+}
+
+.card {
+  box-sizing: border-box;
 
 }
-img{
-    width: 10px;
-   
+
+
+.deck {
+  overflow: hidden;
 }
-table ,
-td,
-tr{
-    border-style: solid 1px;
-    width: 300px;
-    height: 300px;
+
+
+.card header {
+  background: #64020f;
+  padding: 30px;
+  text-align: center;
+}
+
+label span {
+  display: block;
+}
+.card .copy {
+  padding: 20px;
+}
+
+legend {
+  display: none;
+}
+
+input[type='submit'] {
+    height: 1.75em;
+    width:50%;
+  float: right;
+}
+
+.card#cartContents:empty {
+  display: none;
+}
+label {
+  display: block;
+  margin-bottom: 30px;
+}
+
+
+.card#cartContents {
+  background: #ece9e9;
+  padding: 20px;
+  
+}
+
+#cart tr td {
+  
+  color: rgb(49, 42, 42);
+  padding: 20px;
+  text-align: center;
+  width: auto;
+}
+
+#cart tr td:first-child {
+  color: red;
 
 }
-td{
-    border: 2px solid;
+#cart {
+  margin: auto;
+  width: 50%;
 }
+
+#cart thead tr th {
+  color: rgb(78, 28, 28);
+  font-weight: bold;
+  padding: 20px;
+}
+
+
